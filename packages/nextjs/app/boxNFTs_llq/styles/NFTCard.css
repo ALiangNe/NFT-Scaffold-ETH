@@ -1,0 +1,38 @@
+/* NFTCard.module.css */
+
+/* 烟花容器 */
+.fireworks {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, white, transparent);
+    border-radius: 50%;
+    animation: fireworksAnimation 1.5s ease-out infinite;
+  }
+  
+  /* 动画 */
+  @keyframes fireworksAnimation {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+      transform: translate(calc(-50px + 100px * random()), calc(-50px + 100px * random())) scale(1.2);
+    }
+    100% {
+      transform: translate(calc(-75px + 150px * random()), calc(-75px + 150px * random())) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+  /* 自定义随机位置 */
+  @keyframes random {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(1px, 1px);
+    }
+  }
+  
